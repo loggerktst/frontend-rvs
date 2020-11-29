@@ -1,33 +1,42 @@
 function gravar() {
 
-    if (document.getElementById("nomecli").value.length > 0 
-        && document.getElementById("emailcli").value.length > 0 
-        && document.getElementById("celcli").value.length > 0) {
+    if (document.getElementById("dtinicio").value.length > 0 
+        && document.getElementById("tipoacao").value.length > 0 
+        && document.getElementById("nomecon").value.length > 0
+		&& document.getElementById("nprincipal").value.length > 0
+		&& document.getElementById("orgao").value.length > 0
+		&& document.getElementById("natureza").value.length > 0
+		&& document.getElementById("idcli").value.length > 0
+		&& document.getElementById("idadvogado").value.length > 0
+		
+		
+		) {
 
-        if (document.getElementById("inputAg").value > 0) {
 
-            if (compareDates(document.getElementById("dateagenda").value) == true) {
 
-                var data = document.getElementById("dateagenda").value;
+                var data = document.getElementById("dtinicio").value;
                 var ano = data.substring(0, 4);
                 var mes = data.substring(5, 7);
                 var dia = data.substring(8, 10);
 
                 var databrasil = dia + "/" + mes + "/" + ano
-
+                
                 var objeto = {
-                    nomecli: document.getElementById("nomecli").value,
-                    emailcli: document.getElementById("emailcli").value,
-                    celularcli: document.getElementById("celcli").value,
-                    dataagendamento: databrasil,
-                    horaagendamento: document.getElementById("timehorainicio").value,
+                    dtinicio: databrasil,
+                    tipoacao: document.getElementById("tipoacao").value,
+                    nomecon: document.getElementById("nomecon").value,
+                    nprincipal: document.getElementById("nprincipal").value,
+                    orgao: document.getElementById("orgao").value,
+					natureza: document.getElementById("orgao").value,
+                    cliente: {
+                        idcli: document.getElementById("idcli").value
 
-
-
-                    agencia: {
-                        id: document.getElementById("inputAg").value
+                    },
+					advogado: {
+                        id: document.getElementById("idadvogado").value
 
                     }
+					
                 }
 
                 var cabecalho = {
@@ -38,62 +47,70 @@ function gravar() {
                     }
                 }
 
-                fetch("https://projeto-java-final.herokuapp.com/novoagendamento", cabecalho)
+                fetch("https://backend-rvs.herokuapp.com/novoprocesso", cabecalho)
                     .then(res => res.json())
-                    .then(res => { window.alert("Gravado com sucesso") })
-                    .catch(err => { window.alert("ocorreu um erro") });
+                    .then(res => { 
+                        document.getElementById("alertdata").innerHTML = 
+                        "<div class='alert alert-success' role='alert'> Processo cadastrado com sucesso! </div>"
+                        
+                        window.location.reload(true);
+                    })
+                    .catch(err => { 
+                        document.getElementById("alertdata").innerHTML = 
+                        "<div class='alert alert-danger' role='alert'> Serviço indisponível no momento, tente mais tarde </div>";
+                        //window.alert("ocorreu um erro") 
+                    });
 
-            } else {
-                document.getElementById("alertdata").innerHTML =
-                    "<div class='alert alert-danger' role='alert'> Data invalida </div>";
-                document.getElementById("dateagenda").focus();
+           
+        
+    
+    }
 
-            }
-        }
-        else {
-            document.getElementById("alertdata").innerHTML =
-                "<div class='alert alert-danger' role='alert'> Selecione uma Agencia </div>";
-            document.getElementById("inputAg").focus();
-
-        }
-
-    } else {
+     else {
         document.getElementById("alertdata").innerHTML =
             "<div class='alert alert-danger' role='alert'> Preencha todos os campos </div>";
 
     }
 }
 
-function preencheragencias(lista) {
-    var saida = "<option value ='0'>Selecione uma agencia...</option>";
+function carrgardados(){
+	carregarclientes();
+	carregaradvogados();
+}
+
+function preencherclientes(lista) {
+    var saida = "<option value ='0'>Selecione um Cliente...</option>";
 
     for (cont = 0; cont < lista.length; cont++) {
         saida +=
-            "<option value='" + lista[cont].id + "'>" + lista[cont].nomeAgencia + "</option>";
+            "<option value='" + lista[cont].idcli + "'>" + lista[cont].nomecli + "</option>";
     }
-    document.getElementById("inputAg").innerHTML = saida;
+    document.getElementById("idcli").innerHTML = saida;
 }
 
-function carregaragencias() {
-    fetch("https://projeto-java-final.herokuapp.com/agencia")
+function carregarclientes() {
+    fetch("https://backend-rvs.herokuapp.com/relatorioclientes")
         .then(res => res.json())
-        .then(res => preencheragencias(res));
+        .then(res => preencherclientes(res));
 }
 
 
-function compareDates(date) {
-    let parts = date.split('-'); // separa a data pelo caracter '/'
-    let today = new Date();      // pega a data atual
+function preencheradvogados(lista) {
+    var saida = "<option value ='0'>Selecione um Advogado...</option>";
 
-    date = new Date(parts[0], parts[1] - 1, parts[2]); // formata 'date'
-
-    // compara se a data informada é maior que a data atual
-    // e retorna true ou false
-    return date > today ? true : false;
+    for (cont = 0; cont < lista.length; cont++) {
+        saida +=
+            "<option value='" + lista[cont].idadvogado + "'>" + lista[cont].nome + "</option>";
+			window.alert(lista[cont].idadvogado)
+    }
+    document.getElementById("idadvogado").innerHTML = saida;
 }
 
-function comparahorario(horarioinicio, horariofim){
-
-    
-
+function carregaradvogados() {
+    fetch("https://backend-rvs.herokuapp.com/listaadvogados")
+        .then(res => res.json())
+        .then(res => preencheradvogados(res));
 }
+
+
+

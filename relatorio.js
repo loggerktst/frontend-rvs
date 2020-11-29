@@ -1,18 +1,19 @@
 function logout(){
-    window.location = "logingerente.html";
+    window.location = "loginadvogado.html";
 }
+
 
 function carregardados() {
     
     var usuariologado = localStorage.getItem("logado");
     if (usuariologado == null) {
-        window.location = "login.html";
+        window.location = "loginadvogado.html";
     } else {
-        carregaragencias();
+        carregaradvogados();
         carregarclientes();
         var usuariojson = JSON.parse(usuariologado);
         document.getElementById("foto").innerHTML =
-            "<img  alt='Foto não encontrada'src=imagens/" + usuariojson.foto + ">";
+            "<img  class='img-fluid' alt='Foto não encontrada'src=imagens/" + usuariojson.foto + ">";
         document.getElementById("dados").innerHTML =
             "<h3>" + usuariojson.nome + "<br>" + usuariojson.email + "<br></h3><br><br><br>" +
             "<button type='button' class='btn btn-outline-danger' onclick='logout()''>Logout</button>";
@@ -22,15 +23,15 @@ function carregardados() {
 function montartabela(lista){
     var saida = 
     "<table align='center' class='table table-hover'><thead class='thead-dark'> <tr>" +
-    "<th>Agencia</th>   <th>Cliente</th>  <th>Data de Agendamento</th> <th>Horario de Agendamento</th></tr></thread>";
+    "<th>Processo</th>   <th>Cliente</th>  <th>Data de Inicio</th> <th>Advogado</th></tr></thread>";
 
     for (cont=0;cont<lista.length;cont++){
         saida+=
         "<tr>" +
-        "<td>" + lista[cont].agencia.nomeAgencia + "</td>" + 
-        "<td>" + lista[cont].nomecli + "</td>" + 
-        "<td>" + lista[cont].dataagendamento + "</td>" + 
-        "<td>" + lista[cont].horaagendamento + "</td>" + 
+        "<td>" +" <button id='idprocesso' value = '"+ lista[cont].idprocesso +"'onclick = 'direcionar()'</button>"+ "</td>" + 
+        "<td>" + lista[cont].cliente.nomecli + "</td>" + 
+        "<td>" + lista[cont].dtinicio + "</td>" + 
+        "<td>" + lista[cont].advogado.nome + "</td>" + 
         "</tr>";
 
 
@@ -42,20 +43,24 @@ function montartabela(lista){
 }
 
 
+
 function filtrar(){
 
     
     if(
-        document.getElementById("chkagencia").checked==false && 
+        document.getElementById("chkadvogado").checked==false && 
         document.getElementById("chkcliente").checked==false &&
         document.getElementById("chkdata").checked==false
         )
         {
-        window.alert("Escolha uma opção de filtro!")
+            fetch("https://backend-rvs.herokuapp.com/listaprocessosordenado")
+            .then(res => res.json())
+            .then(res => montartabela(res))
+            .catch(err => {window.alert("Sem processos")});
     }else {
         var rota = "relatoriopor";
-        if(document.getElementById("chkagencia").checked==true){
-            rota+="agencia";
+        if(document.getElementById("chkaadvogado").checked==true){
+            rota+="idadvogado";
         }
         if(document.getElementById("chkcliente").checked==true){
             rota+="cliente";
@@ -74,7 +79,7 @@ function filtrar(){
           nomecli : document.getElementById("cmdcliente").value,
           dataagendamento : databrasil,
           agencia : {
-              id : document.getElementById("cmdagencia").value
+              id : document.getElementById("cmdadvogado").value
           }
       };
 
@@ -87,45 +92,57 @@ function filtrar(){
           }
       }
 
-      fetch("https://projeto-java-final.herokuapp.com/" + rota , cabecalho)
+      fetch("https://backend-rvs.herokuapp.com/" + rota , cabecalho)
       .then(res=> res.json())
       .then(res => montartabela(res))
-      .catch(err => {window.alert("Sem agendamentos")});   
+      .catch(err => {window.alert("Sem processos")});   
 
     }
 
 }
 
 
+function direcionar(){
+	
+	
+}
 
-function preencheragencias(lista) {
-    var saida ="";
+
+
+
+function preencheradvogados(lista) {
+    var saida = "<option value ='0'>Selecione um Advogado...</option>";
 
     for (cont = 0; cont < lista.length; cont++) {
         saida +=
-            "<option value='" + lista[cont].id + "'>" + lista[cont].nomeAgencia + "</option>";
+            "<option value='" + lista[cont].idadvogado + "'>" + lista[cont].nome + "</option>";
+			window.alert(lista[cont].idadvogado)
     }
-    document.getElementById("cmdagencia").innerHTML = saida;
+    document.getElementById("idadvogado").innerHTML = saida;
 }
 
-function carregaragencias() {
-    fetch("https://projeto-java-final.herokuapp.com/agencia")
+function carregaradvogados() {
+    fetch("https://backend-rvs.herokuapp.com/listaadvogados")
         .then(res => res.json())
-        .then(res => preencheragencias(res));
+        .then(res => preencheradvogados(res));
 }
 
 function preencherclientes(lista) {
-    var saida ="";
+    var saida = "<option value ='0'>Selecione um Cliente...</option>";
 
     for (cont = 0; cont < lista.length; cont++) {
         saida +=
-            "<option value='" + lista[cont].nomecli + "'>" + lista[cont].nomecli + "</option>";
+            "<option value='" + lista[cont].idcli + "'>" + lista[cont].nomecli + "</option>";
     }
-    document.getElementById("cmdcliente").innerHTML = saida;
+    document.getElementById("idcli").innerHTML = saida;
 }
 
 function carregarclientes() {
-    fetch("https://projeto-java-final.herokuapp.com/clientes")
+    fetch("https://backend-rvs.herokuapp.com/relatorioclientes")
         .then(res => res.json())
         .then(res => preencherclientes(res));
 }
+
+
+
+    

@@ -26,11 +26,13 @@ function gravar() {
                     }
                 }
 
-                fetch("https://projeto-java-final.herokuapp.com/novogerente", cabecalho)
+                fetch("https://backend-rvs.herokuapp.com/novoadvogado", cabecalho)
                     .then(res => res.json())
                     .then(res => { window.alert("Gravado com sucesso") })
                     .catch(err => { window.alert("ocorreu um erro") });
-                    window.location = "login.html";
+                    window.location = "loginadvogado.html";
+                    document.getElementById("alertdata").innerHTML =
+                "<div class='alert alert-danger' role='alert'> erro no cadastro </div>";
 
             } else{
                 document.getElementById("alertdata").innerHTML =

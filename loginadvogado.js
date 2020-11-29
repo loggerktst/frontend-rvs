@@ -42,7 +42,7 @@ function logar() {
     }
 	console.log(flag);
 
-    fetch("http://localhost:8080/"+flag, cabecalho)
+    fetch("https://backend-rvs.herokuapp.com/"+flag, cabecalho)
         .then(res => res.json())
         .then(res => {
             localStorage.setItem("logado", JSON.stringify(res));

@@ -10,7 +10,7 @@ function preencheradvogados(lista) {
 }
 
 function carregaradvogados() {
-    fetch("http://localhost:8080/listaadvogados")
+    fetch("https://backend-rvs.herokuapp.com/listaadvogados")
         .then(res => res.json())
         .then(res => preencheradvogados(res));
 }
@@ -45,7 +45,7 @@ function gravar() {
 						}
 					}
 
-					fetch("http://localhost:8080/novocliente", cabecalho)
+					fetch("https://backend-rvs.herokuapp.com/novocliente", cabecalho)
 						.then(res => res.json())
 						.then(res => { window.alert("Gravado com sucesso") })
 						.catch(err => { window.alert("ocorreu um erro") });
@@ -83,7 +83,7 @@ function preencheprocessos(lista) {
 }
 
 function validaprocesso() {
-    fetch("http://localhost:8080/listaprocessos")
+    fetch("https://backend-rvs.herokuapp.com/listaprocessos")
         .then(res => res.json())
         .then(res => preencheprocessos(res));
 	return res;

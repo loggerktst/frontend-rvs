@@ -30,7 +30,7 @@ function gravar() {
                     .then(res => res.json())
                     .then(res => { window.alert("Gravado com sucesso") })
                     .catch(err => { window.alert("ocorreu um erro") });
-                    window.location = "loginadvogado.html";
+                    //window.location = "loginadvogado.html";
                     document.getElementById("alertdata").innerHTML =
                 "<div class='alert alert-danger' role='alert'> erro no cadastro </div>";
 

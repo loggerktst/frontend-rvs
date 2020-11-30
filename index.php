@@ -264,7 +264,7 @@
                <div class="col-lg-6">
                   <div class="team-member">
                      <img class="mx-auto rounded-circle" src="imagens/drandre.PNG" alt="" />
-                     <h4>Andre Rodrigues Vieira</h4>
+                     <h4>Andre Felipe Vieira</h4>
                      <p class="text-muted"></p>
                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
@@ -274,7 +274,7 @@
                <div class="col-lg-6">
                   <div class="team-member">
                      <img class="mx-auto rounded-circle" src="imagens/drhenrique.jpg" alt="" />
-                     <h4>Henrique Rodrigues Vieira</h4>
+                     <h4>Thiago Henrique</h4>
                      <p class="text-muted"></p>
                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                      <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>

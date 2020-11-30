@@ -73,7 +73,7 @@ function gravar() {
     }
 }
 
-function carrgardados(){
+function carregardados(){
 	carregarclientes();
 	carregaradvogados();
 }

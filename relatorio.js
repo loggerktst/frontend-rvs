@@ -3,43 +3,21 @@ function logout(){
 }
 
 
-function carregardados(){
-	carregarclientes();
-	carregaradvogados();
-}
-
-function preencherclientes(lista) {
-    var saida = "<option value ='0'>Selecione um Cliente...</option>";
-
-    for (cont = 0; cont < lista.length; cont++) {
-        saida +=
-            "<option value='" + lista[cont].idcli + "'>" + lista[cont].nomecli + "</option>";
+function carregardados() {
+    
+    var usuariologado = localStorage.getItem("logado");
+    if (usuariologado == null) {
+        window.location = "loginadvogado.html";
+    } else {
+        carregaradvogados();
+        carregarclientes();
+        var usuariojson = JSON.parse(usuariologado);
+        document.getElementById("foto").innerHTML =
+            "<img  class='img-fluid' alt='Foto não encontrada'src=imagens/" + usuariojson.foto + ">";
+        document.getElementById("dados").innerHTML =
+            "<h3>" + usuariojson.nome + "<br>" + usuariojson.email + "<br></h3><br><br><br>" +
+            "<button type='button' class='btn btn-outline-danger' onclick='logout()''>Logout</button>";
     }
-    document.getElementById("idcli").innerHTML = saida;
-}
-
-function carregarclientes() {
-    fetch("https://backend-rvs.herokuapp.com/relatorioclientes")
-        .then(res => res.json())
-        .then(res => preencherclientes(res));
-}
-
-
-function preencheradvogados(lista) {
-    var saida = "<option value ='0'>Selecione um Advogado...</option>";
-
-    for (cont = 0; cont < lista.length; cont++) {
-        saida +=
-            "<option value='" + lista[cont].idadvogado + "'>" + lista[cont].nome + "</option>";
-			
-    }
-    document.getElementById("idadvogado").innerHTML = saida;
-}
-
-function carregaradvogados() {
-    fetch("https://backend-rvs.herokuapp.com/listaadvogados")
-        .then(res => res.json())
-        .then(res => preencheradvogados(res));
 }
 
 function montartabela(lista){
@@ -132,7 +110,41 @@ function direcionar(){
 
 
 
+function preencheradvogados(lista) {
+    var saida = "<option value ='0'>Selecione um Advogado...</option>";
 
+    for (cont = 0; cont < lista.length; cont++) {
+        saida +=
+            "<option value='" + lista[cont].idadvogado + "'>" + lista[cont].nome + "</option>";
+			
+    }
+    document.getElementById("idadvogado").innerHTML = saida;
+}
+
+function carregaradvogados() {
+    fetch("https://backend-rvs.herokuapp.com/listaadvogados")
+        .then(res => res.json())
+        .then(res => preencheradvogados(res));
+}
+
+function preencherclientes(lista) {
+    var saida = "<option value ='0'>Selecione um Cliente...</option>";
+
+    for (cont = 0; cont < lista.length; cont++) {
+        saida +=
+            "<option value='" + lista[cont].idcli + "'>" + lista[cont].nomecli + "</option>";
+	    
+    }
+    document.getElementById("idcli").innerHTML = saida;
+	console.log(lista[0]);
+}
+
+function carregarclientes() {
+    fetch("https://backend-rvs.herokuapp.com/relatorioclientes")
+        .then(res => res.json())
+        .then(res => preencherclientes(res));
+		
+}
 
 
 

@@ -77,8 +77,8 @@ function filtrar(){
         
       var objeto = {
           nomecli : document.getElementById("cmdcliente").value,
-          dataagendamento : databrasil,
-          agencia : {
+          dtinicio : databrasil,
+          advogado : {
               id : document.getElementById("cmdadvogado").value
           }
       };

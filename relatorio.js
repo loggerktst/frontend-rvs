@@ -1,5 +1,5 @@
 function logout(){
-    window.location = "loginadvogado.html";
+    window.location = "index.php";
 }
 
 

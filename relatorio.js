@@ -133,9 +133,10 @@ function preencherclientes(lista) {
     for (cont = 0; cont < lista.length; cont++) {
         saida +=
             "<option value='" + lista[cont].idcli + "'>" + lista[cont].nomecli + "</option>";
-	    window.alert(lista[cont].idcli;
+	    
     }
     document.getElementById("idcli").innerHTML = saida;
+	console.log(lista[0]);
 }
 
 function carregarclientes() {

@@ -142,10 +142,8 @@ function preencherclientes(lista) {
 function carregarclientes() {
     fetch("https://backend-rvs.herokuapp.com/relatorioclientes")
         .then(res => res.json())
-        //.then(res => preencherclientes(res));
-        .then(res => preencherclientes(res)
-		 .catch(err => {window.alert("Sem processos")});   
-
+        .then(res => preencherclientes(res));
+		
 }
 
 

@@ -184,6 +184,26 @@
          <div class="container">
             <div class="text-center">
                <h2 class="section-heading text-uppercase">Sobre Nós</h2>
+			   
+			   
+			   <div class="row">
+               <div class="col-lg-12">
+                  <div class="team-member">
+                     <img class="mx-auto rounded-circle" src="imagens/drsjuntos.jpg" alt="" />
+                     <h4></h4>
+                     <p class="text-muted"></p>
+                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                     <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+               </div>
+               
+            </div>
+			   
+			   
+			   
+			   
+			   
                <h3 class="section-subheading text-muted">RV - Sociedade de Advogados é um escritório regido pelos sócios administradores 
                   Dr. André Felipe @andrevieira.student e Dr. Thiago Henrique @henrique.direito.adv - Graduados em Direito pela Universidade Anhembi Morumbi.
                   <br>

@@ -602,9 +602,9 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
       <!-- Third party plugin JS-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-      <!-- Contact form JS-->
+      <!-- Contact form JS
       <script src="https://startbootstrap.github.io/startbootstrap-agency/assets/mail/jqBootstrapValidation.js"></script>
-      <script src="https://startbootstrap.github.io/startbootstrap-agency/assets/mail/contact_me.js"></script>
+      <script src="https://startbootstrap.github.io/startbootstrap-agency/assets/mail/contact_me.js"></script>-->
       <!-- Core theme JS-->
       <script src="https://startbootstrap.github.io/startbootstrap-agency/js/scripts.js"></script>
    </body>

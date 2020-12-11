@@ -212,7 +212,7 @@
             </div>
             <ul class="timeline">
                <li>
-                  <div class="timeline-image"><img class="rounded-circle img-fluid" src="imagens/card1.PNG" alt="" /></div>
+                  <div class="timeline-image"><img class="rounded-circle img-fluid" src="imagens/card1.png" alt="" /></div>
                   <div class="timeline-panel">
                      <div class="timeline-heading">
                         <h4>intervalo de tempo</h4>

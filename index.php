@@ -29,7 +29,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav text-uppercase ml-auto">
-                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Serviços</a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Atuação</a></li>
                   <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Fique ligado!</a></li>
                   <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre</a></li>
                   <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Time</a></li>
@@ -51,7 +51,7 @@
       <section class="page-section" id="services">
          <div class="container">
             <div class="text-center">
-               <h2 class="section-heading text-uppercase">Serviços</h2>
+               <h2 class="section-heading text-uppercase">Atuação</h2>
                <h3 class="section-subheading text-muted">
                   Direito Civil<br>
                   Direito de Famílias<br>
@@ -68,9 +68,9 @@
                   <i class="fas fa-circle fa-stack-2x text-primary"></i>
                   <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
                   </span>
-                  <h4 class="my-3">Orçamento Online</h4>
+                  <h4 class="my-3">Consulta Jurídica</h4>
                   <p class="text-muted">nos envie uma mensagem por 
-                     <a href="https://api.whatsapp.com/send?phone=551194994-6329&text=Ola,%20gostaria%20de%20maiores%20informacoes">aqui</a>, faça seu orçamento online.
+                     <a href="https://api.whatsapp.com/send?phone=551194994-6329&text=Ola,%20gostaria%20de%20maiores%20informacoes">aqui</a>, faça o agendamento de sua consulta online.
                   </p>
                </div>
                <div class="col-md-6">

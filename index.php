@@ -323,7 +323,7 @@
                <h2 class="section-heading text-uppercase">Fale Conosco!</h2>
                <h3 class="section-subheading text-muted">Envie um email com sua duvida para nossa equipe!</h3>
             </div>
-            <form action="https://formspree.io/f/admrvsadvogados@outlook.com" method="post" id="contactForm" name="sentMessage" novalidate="novalidate">
+            <form action="email.php" method="post" id="contactForm" name="sentMessage" novalidate="novalidate">
                <div class="row align-items-stretch mb-5">
                   <div class="col-md-6">
                      <div class="form-group">
@@ -341,7 +341,7 @@
                   </div>
                   <div class="col-md-6">
                      <div class="form-group form-group-textarea mb-md-0">
-                        <textarea class="form-control" id="message" placeholder="Mensagem *" required="required" data-validation-required-message="Please enter a message."></textarea>
+                        <textarea class="form-control" id="	" placeholder="Mensagem *" required="required" data-validation-required-message="Please enter a message."></textarea>
                         <p class="help-block text-danger"></p>
                      </div>
                   </div>

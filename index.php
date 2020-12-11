@@ -323,7 +323,7 @@
                <h2 class="section-heading text-uppercase">Fale Conosco!</h2>
                <h3 class="section-subheading text-muted">Envie um email com sua duvida para nossa equipe!</h3>
             </div>
-            <form action="email.php" method="post" id="contactForm" name="sentMessage" novalidate="novalidate">
+            <form action="email.php" method="post" id="contactForms" name="sentMessages" novalidate="novalidate">
                <div class="row align-items-stretch mb-5">
                   <div class="col-md-6">
                      <div class="form-group">

@@ -38,7 +38,7 @@ function gravar() {
 							foto: document.getElementById("foto").value,
 							
 							advogado : {
-								id : document.getElementById("cmbartistas").value
+								id : document.getElementById("idadvogado").value
 							}
 							
 
@@ -58,6 +58,7 @@ function gravar() {
 							.then(res => { window.alert("Gravado com sucesso") })
 							.catch(err => { window.alert("ocorreu um erro") });
 							window.location = "cadastrocliente.html";
+							console.log("idadvogado");
 							
 			
 

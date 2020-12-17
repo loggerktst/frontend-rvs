@@ -3,8 +3,8 @@ function preencheradvogados(lista) {
 
     for (cont = 0; cont < lista.length; cont++) {
         saida +=
-            "<option value='" + lista[cont].idAdvogado + "'>" + lista[cont].nomeAdvogado + "</option>";
-			window.alert(lista[cont].idadvogado)
+            "<option value='" + lista[cont].idadvogado + "'>" + lista[cont].nome + "</option>";
+			
     }
     document.getElementById("idadvogado").innerHTML = saida;
 }

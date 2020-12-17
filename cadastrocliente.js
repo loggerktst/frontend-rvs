@@ -7,7 +7,7 @@ function preencheradvogados(lista) {
 	
     }
     document.getElementById("idadvogado").innerHTML = saida;
-	console.log(getElementById("idadvogado"));
+	console.log(document.getElementById("idadvogado"));
 }
 
 function carregaradvogados() {

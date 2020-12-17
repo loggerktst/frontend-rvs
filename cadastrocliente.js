@@ -34,6 +34,7 @@ function gravar() {
 							emailcli: document.getElementById("emailcli").value,
 							login: document.getElementById("login").value,
 							celcli: document.getElementById("celcli").value,
+							senha: document.getElementById("txtsenha").value,
 							foto: document.getElementById("foto").value
 							
 

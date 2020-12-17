@@ -29,6 +29,8 @@ function gravar() {
 		
 		   if(document.getElementById("txtsenha").value==document.getElementById("txtsenhaconfirm").value){
 
+						var select = document.getElementById('idadvogado');
+						var adv = select.options[select.selectedIndex].value;
 
 						var objeto = {
 							nomecli: document.getElementById("nomecli").value,
@@ -39,7 +41,7 @@ function gravar() {
 							foto: document.getElementById("foto").value,
 							
 							advogado : {
-								id : document.getElementById("idadvogado").value
+								id : adv
 							}
 							
 

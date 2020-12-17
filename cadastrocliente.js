@@ -58,7 +58,7 @@ function gravar() {
 							.then(res => { window.alert("Gravado com sucesso") })
 							.catch(err => { window.alert("ocorreu um erro") });
 							window.location = "cadastrocliente.html";
-							console.log("idadvogado");
+							console.log(document.getElementById("idadvogado"));
 							
 			
 

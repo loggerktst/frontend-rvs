@@ -44,7 +44,7 @@ function gravar() {
 							foto: document.getElementById("foto").value,
 							
 							advogado : {
-								id : select.options[select.selectedIndex].value;
+								idadvogado : select.options[select.selectedIndex].value;
 							}
 							
 

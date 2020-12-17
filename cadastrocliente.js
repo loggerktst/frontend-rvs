@@ -59,7 +59,8 @@ function gravar() {
 						fetch("https://backend-rvs.herokuapp.com/novocliente", cabecalho)
 							.then(res => res.json())
 							.then(res => { window.alert("Gravado com sucesso") })
-							.catch(err => { window.alert("ocorreu um erro") });
+							.catch(err => { console.log("tagrau") });
+							//.catch(err => { window.alert("ocorreu um erro") });
 							window.location = "cadastrocliente.html";
 							console.log(document.getElementById("idadvogado"));
 							

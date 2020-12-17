@@ -35,7 +35,11 @@ function gravar() {
 							login: document.getElementById("login").value,
 							celcli: document.getElementById("celcli").value,
 							senha: document.getElementById("txtsenha").value,
-							foto: document.getElementById("foto").value
+							foto: document.getElementById("foto").value,
+							
+							advogado : {
+								id : document.getElementById("cmbartistas").value
+							}
 							
 
 					   

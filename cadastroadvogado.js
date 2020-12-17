@@ -1,7 +1,7 @@
 function gravar() {
 
     if (document.getElementById("txtnome").value.length > 0 
-        && document.getElementById("txtracf").value.length > 0 
+        && document.getElementById("login").value.length > 0 
         && document.getElementById("txtemail").value.length > 0
         && document.getElementById("txtsenha").value.length > 0
         && document.getElementById("txtsenhaconfirm").value.length > 0){
@@ -10,7 +10,7 @@ function gravar() {
 
                 var objeto = {
                     nome: document.getElementById("txtnome").value,
-                    racf: document.getElementById("txtracf").value,
+                    racf: document.getElementById("login").value,
                     email: document.getElementById("txtemail").value,
                     senha: document.getElementById("txtsenha").value,
                     foto: document.getElementById("txtfoto").value

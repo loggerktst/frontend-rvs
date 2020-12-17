@@ -10,7 +10,7 @@ function gravar() {
 
                 var objeto = {
                     nome: document.getElementById("txtnome").value,
-                    racf: document.getElementById("login").value,
+                    login: document.getElementById("login").value,
                     email: document.getElementById("txtemail").value,
                     senha: document.getElementById("txtsenha").value,
                     foto: document.getElementById("txtfoto").value

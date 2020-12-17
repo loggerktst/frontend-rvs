@@ -31,6 +31,7 @@ function gravar() {
 
 						var select = document.getElementById('idadvogado');
 						var adv = select.options[select.selectedIndex].value;
+						console.log(adv)
 
 						var objeto = {
 							nomecli: document.getElementById("nomecli").value,
@@ -59,8 +60,8 @@ function gravar() {
 						fetch("https://backend-rvs.herokuapp.com/novocliente", cabecalho)
 							.then(res => res.json())
 							.then(res => { window.alert("Gravado com sucesso") })
-							.catch(err => { console.log("tagrau") });
-							//.catch(err => { window.alert("ocorreu um erro") });
+							//.catch(err => { console.log("tagrau") });
+							.catch(err => { window.alert("ocorreu um erro") });
 							window.location = "cadastrocliente.html";
 							console.log(document.getElementById("idadvogado"));
 							

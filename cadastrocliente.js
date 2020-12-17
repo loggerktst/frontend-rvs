@@ -1,5 +1,5 @@
 function preencheradvogados(lista) {
-    var saida = "<option value ='0'>Selecione um Advogado...</option>";
+    var saida = "<option value ='999'>Selecione um Advogado...</option>";
 
     for (cont = 0; cont < lista.length; cont++) {
         saida +=

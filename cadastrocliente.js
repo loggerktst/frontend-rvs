@@ -4,7 +4,7 @@ function preencheradvogados(lista) {
     for (cont = 0; cont < lista.length; cont++) {
         saida +=
             "<option value='" + lista[cont].idadvogado + "'>" + lista[cont].nome + "</option>";
-			
+	console.log(lista[cont].idadvogado);
     }
     document.getElementById("idadvogado").innerHTML = saida;
 }
